@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  mysql_db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: registration_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    command: --default-authentication-plugin=mysql_native_password 
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    restart: always
+
+  backend_api:
+    build: 
+      context: ./API
+      dockerfile: Dockerfile
+    container_name: backend_api
+    environment:
+      API_PORT: 3000
+      DB_HOST: mysql_db
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: registration_db
+    ports:
+      - "3001:3000"
+    depends_on:
+      - mysql_db
+    restart: always
+
+  frontend_web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend_web
+    ports:
+      - "80:80"
+    depends_on:
+      - backend_api
+    restart: always
+    
+volumes:
+  mysql_data:

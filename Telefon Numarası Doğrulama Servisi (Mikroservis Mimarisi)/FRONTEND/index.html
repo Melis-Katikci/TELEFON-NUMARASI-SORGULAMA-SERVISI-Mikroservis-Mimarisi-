@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefon Numarası Doğrulama Servisi ile Mikroservis Mimarisi Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>:TELEFON NUMARASI DOĞRULAMA SERVİSİ:</h1>
+
+        <form id="registrationForm"> 
+            <div class="satir">
+                <label for="name">İSİM VE SOYİSİM:</label> 
+                <input type="text" id="name" placeholder="">
+            </div>
+                        
+            <div class="satir">
+                <label for="email">E-MAİL:</label>
+                <input type="email" id="email" placeholder="">
+            </div>
+                        
+            <div class="satir">
+                <label for="phone"> 6 HANELİ TELEFON NUMARANIZ:</label>
+                <input type="text" id="phone" placeholder="">
+            </div>
+            <div class="satir">
+                <button id="buton" type="submit">KAYDET</button>
+            </div>
+        </form>
+    <div id="message" class="message"></div>
+
+    <hr>
+
+        <h2>SON KAYIT BİLGİLERİ;</h2>
+        
+                <table id="kayit">
+            <thead>
+                <tr>
+                    <th>Ad Soyad</th>
+                    <th>E-mail</th>
+                    <th>Telefon no</th>
+                    <th>Kayıt Zamanı</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

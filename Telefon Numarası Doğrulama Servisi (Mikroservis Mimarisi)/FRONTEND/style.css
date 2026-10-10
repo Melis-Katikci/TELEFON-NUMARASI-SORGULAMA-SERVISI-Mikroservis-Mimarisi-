@@ -1,0 +1,150 @@
+body {
+    background-color: rgb(159, 187, 240);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--box-bg-color);
+    width: 70%;
+    max-width: 650px; 
+    padding: 30px 40px; 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(28, 2, 175, 0.493); 
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    font-size: large;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    color: black;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.satir {
+    display: flex;
+    flex-direction: column; 
+    position: relative; 
+    margin-bottom: 25px; 
+}
+
+.satir hr { 
+    display: none;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%; 
+    padding: 10px 10px 10px 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    transition: all 0.2s ease-out; 
+    color: black; 
+    font-weight: 500;
+    margin: 0;
+    order: 2; 
+}
+
+.satir label {
+    position: absolute; 
+    top: 10px; 
+    left: 10px;
+    font-weight: 600; 
+    color: rgba(4, 4, 80, 0.7); 
+    z-index: 10; 
+    background-color: transparent; 
+    order: 1; 
+}
+
+.satir:has(input:focus) label,
+.satir:has(input:not(:placeholder-shown)) label {
+    top: -12px;
+    font-size: 0.8em;
+    color: var(--secondary-color);
+    background-color: var(--box-bg-color);
+    padding: 0 5px;
+}
+
+#buton {
+    display: block; 
+    margin: auto; 
+    width: 50%; 
+    background-color:#1201a8; 
+    color: var(--primary-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgb(17, 0, 49);
+}
+
+#buton:hover {
+    background-color: #9e0202;
+    box-shadow: 0 6px 8px rgb(53, 3, 3);
+}
+
+#buton:active {
+    transform: scale(0.98); 
+    box-shadow: 0 2px 4px rgb(53, 3, 3); 
+}
+
+#message {
+    padding: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 20px;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; 
+}
+
+.message.success, .message.error {
+    background-color: darkblue; 
+    color: white;
+    border: 2px solid white;
+}
+
+#kayit {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: black;
+    font-size: 1em;
+}
+
+#kayit thead th {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: black;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid black; 
+    font-weight: 700;
+}
+
+#kayit tbody tr {
+    border-bottom: 1px solid black;
+}
+
+#kayit tbody td {
+    padding: 10px 12px;
+    color: black;
+    font-size: 1em;
+    border: 1px solid black; 
+}
